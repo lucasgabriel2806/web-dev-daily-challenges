@@ -12,9 +12,19 @@
 
     <style>
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #E3B17D;
+            background: #A5604D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
@@ -24,15 +34,15 @@
         }
 
         .left {
-            width: 400px;
-            height: 500px;
+            width: 560px;
+            height: 650px;
             border-radius: 15px 0 0 15px;
         }
 
         .left img {
 
-            width: 400px;
-            height: 500px;
+            width: 560px;
+            height: 650px;
             border-radius: 15px 0 0 15px;
 
             object-fit: cover;
@@ -40,10 +50,11 @@
         }
 
         .right {
-            padding-left: 40px;
+            padding-top: 40px;
+            padding-left: 100px;
             background: white;
-            width: 400px;
-            height: 500px;
+            width: 560px;
+            height: 650px;
             border-radius: 0 15px 15px 0;
         }
 
@@ -57,8 +68,9 @@
 
         .new-collection {
             background: #F7FF96;
-            display: inline;
+            display: inline-block;
             padding: 7px 10px 7px 10px;
+            margin-top: 30px;
             border-radius: 5px;
             text-transform: uppercase;
             font-size: 12px;
@@ -66,11 +78,16 @@
 
         h1 {
             margin-top: 10px;
-            font-weight: 900;
+            margin-bottom: 20px;
+            font-weight: 800;
         }
 
         .big-price {
             font-size: 2em;
+        }
+
+        .color-container {
+            margin-bottom: 20px;
         }
 
         .color {
@@ -99,18 +116,15 @@
 
         .color-selected {
               box-shadow: 0 0 0 7px white, 0 0 0 8px gray;
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: space-evenly;
+              margin-left: 10px;
+              margin-right: 10px;
         }
 
         .btn {
             text-transform: uppercase;
             border-radius: 5px;
-            padding: 10px 15px 10px 15px;
-            width: 150px;
+            padding: 15px 15px 15px 15px;
+            width: 170px;
         }
 
         .add-to-bag {
@@ -146,7 +160,7 @@
 
             <p class="bold margin"><span class="big-price">$120</span>.50</p>
 
-            <p class="bold">Colors</p>
+            <p class="bold" style="margin-bottom: 20px">Colors</p>
 
             <div class="color-container">
 
@@ -162,11 +176,11 @@
 
             <br>
 
-            <div class="">
+            <div>
                 
-                <button class="btn add-to-bag">Add to bag</button>
+                <button class="btn add-to-bag bold">Add to bag</button>
 
-                <button class="btn add-to-wishlist">Add to wishlist</button>
+                <button class="btn add-to-wishlist bold">Add to wishlist</button>
 
             </div>
 
