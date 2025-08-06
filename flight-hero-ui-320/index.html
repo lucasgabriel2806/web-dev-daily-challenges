@@ -16,17 +16,22 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            /* font-family: Arial, Helvetica, sans-serif; */
+        }
+
+        body {
+            /* background-image: url('./img/aviao.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; */
         }
 
         header {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 20px 0;
+            padding: 17.7px 0;
 
-            background: #76C1D0;
-            color: #fff;
+            background: rgba(118, 193, 208, 0.5);
         }
 
         ul {
@@ -45,8 +50,41 @@
 
         .contact-us {
             border: 1px solid black;
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 5px 15px;
+        }
+
+        main {
+            height: calc(100vh - 100px);
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+        }
+
+        main > h1 {
+            font-size: 3em;
+        }
+
+        .container-inputs {
+            background: #000;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .container-inputs > * {
+            border-radius: 30px;
+            padding: 10px 15px;
+        }
+
+        .container-inputs > select {
+            width: 200px;
+        }
+
+        .container-inputs > input {
+            background: #0CE2C8;
+            cursor: pointer;
         }
 
     </style>
@@ -86,6 +124,30 @@
         <a class="contact-us" href="">Contact Us</a>
 
     </header>
+
+    <main>
+
+        <h1>Find Cheap Flights On A Click</h1>
+
+        <p>
+            Book in Advance and Get Membership Card to Save Some Points wich can be used for future purchases.
+        </p>
+
+        <div class="container-inputs">
+
+            <select name="location" id="location">
+                <option value="">Location</option>
+            </select>
+
+            <select name="category" id="category">
+                <option value="">Choose a Category</option>
+            </select>
+
+            <input type="susbmit" value="Check Flights">
+
+        </div>
+
+    </main>
     
 </body>
 
