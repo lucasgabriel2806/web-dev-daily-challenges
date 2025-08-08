@@ -16,25 +16,33 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* body {
-            background-image: url('./img/aviao.jpg');
+        body {
+            background-image: url('./img/aviao-bg.jpg');
             background-repeat: no-repeat;
             background-size: cover;
-        } */
+            background-position: bottom;
+            height: 100vh;
+        }
 
         header {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
+            gap: 400px;
 
             position: absolute;
             width: 100vw;            
-            padding: 17.7px 0;
+            padding: 10px 0;
+            font-size: 14px;
 
-            background: rgba(118, 193, 208, 0.5);
+            background: rgba(124, 193, 205, .6);
+        }
+
+        .img-logo {
+            border-radius: 20px;
         }
 
         ul {
@@ -64,33 +72,44 @@
             justify-content: end;
             align-items: center;
 
+            color: white;
             padding-bottom: 100px;
         }
 
         main > h1 {
-            font-size: 3em;
+            font-size: 3.4em;
+            margin-bottom: 15px;
+        }
+
+        main > p {
+            font-size: 18px;
+            width: 560px;
+            text-align: center;
+            margin-bottom: 15px;
         }
 
         .container-inputs {
-            background: #000;
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 30px;
+            background: rgba(255, 255, 255, .3);
+            padding: 20px 40px;
+            border-radius: 60px;
             width: max-content;
         }
 
         .container-inputs > * {
             border-radius: 30px;
             padding: 10px 15px;
+            border: none;
         }
 
         .container-inputs > select {
             width: 200px;
+            color: gray;
         }
 
         .container-inputs > input {
             background: #0CE2C8;
             cursor: pointer;
+            width: 115px;
         }
 
     </style>
@@ -103,7 +122,9 @@
     <header>
 
         <!-- logo -->
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <img class="img-logo" src="./img/logo.jpg" alt="">
+        </div>
 
         <!-- links -->
         <nav>
@@ -127,7 +148,7 @@
         </nav>
 
         <!-- contact us -->
-        <a class="contact-us" href="">Contact Us</a>
+        <a class="contact-us" href="#">Contact Us</a>
 
     </header>
 
