@@ -19,16 +19,19 @@
             /* font-family: Arial, Helvetica, sans-serif; */
         }
 
-        body {
-            /* background-image: url('./img/aviao.jpg');
+        /* body {
+            background-image: url('./img/aviao.jpg');
             background-repeat: no-repeat;
-            background-size: cover; */
-        }
+            background-size: cover;
+        } */
 
         header {
             display: flex;
             justify-content: space-around;
             align-items: center;
+
+            position: absolute;
+            width: 100vw;            
             padding: 17.7px 0;
 
             background: rgba(118, 193, 208, 0.5);
@@ -55,11 +58,13 @@
         }
 
         main {
-            height: calc(100vh - 100px);
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: end;
             align-items: center;
+
+            padding-bottom: 100px;
         }
 
         main > h1 {
@@ -71,6 +76,7 @@
             display: inline-block;
             padding: 10px 20px;
             border-radius: 30px;
+            width: max-content;
         }
 
         .container-inputs > * {
