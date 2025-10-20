@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- W3Schools - Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+<body class="bg-[url(/img/bg-building.png)] text-white">
+
+    <header class="flex items-center gap-[10px] p-[10px]">
+        <img class="w-[30px] h-[30px]" src="./img/logo.png" alt="">
+        <p class="text-[26px] font-bold">Crowdfund.</p>
+    </header>
+
+    <main class="flex justify-between items-center h-[calc(100vh_-_98px)] px-[100px]">
+
+        <div class="w-[430px]">
+
+            <h1 class="text-[64px] font-bold">Another Annoying Newsletter</h1>
+
+            <p class="text-[20px]">We invite you to our next annoying newsletter.</p>
+
+        </div>
+
+        <div>
+
+            <p class="text-center font-bold uppercase mb-[20px]">sign up for free</p>
+
+            <form class="flex flex-col w-[400px] mb-[20px]" action="#">
+
+                <div class="flex flex-col border-2 border-b-0 border-gray-400 rounded-tl-[4px] rounded-tr-[4px] ">
+
+                    <input class="border-b border-gray-500 px-[10px] py-[15px]" type="text" placeholder="Name">
+
+                    <input class="border-b border-gray-500 px-[10px] py-[15px]" type="email" placeholder="E-mail">
+
+                    <!-- Password Container (Para colocar o icone do olho) -->
+                    <div class="relative">
+                        <input class="px-[10px] py-[15px]" type="password" placeholder="Password">
+                        <i class="absolute right-[15px] top-[15px] text-gray-400 fa fa-eye-slash"></i>
+                    </div>                
+
+                </div>
+
+                <!-- Password Container (Para colocar o icone do olho) -->
+                <div class="relative">
+                    <input class="flex items-center justify-center w-[400px] bg-[#FF3B30] text-white py-[15px] rounded-br-[4px] rounded-bl-[4px]" type="submit" value="Sign up">
+                    <i class="absolute top-[16px] right-[150px] text-[#fff] material-icons">keyboard_arrow_right</i>
+                </div>
+
+            </form>
+
+            <p class="text-center text-gray-400">
+                By clicking "Sign up" I agree to our
+                <br>
+                <a class="text-white" href="#">Terms of Service</a>
+            </p>
+
+        </div>
+        
+    </main>
+
+    <footer class="flex justify-between px-[40px] py-[15px] w-screen absolute bottom-0">
+
+        <p>&copy; 2025 crowdfund. All Right Reserved</p> 
+
+        <nav class="absolute flex justify-center w-[calc(100vw_-_50px)]">
+
+            <ul class="flex gap-[30px] font-bold uppercase">
+                <li><a href="#">contact</a></li>
+                <li><a href="#">help</a></li>
+                <li><a href="#">terms of use</a></li>
+                <li><a href="#">privacy policy</a></li>
+            </ul>
+
+        </nav>
+
+        <nav class="flex gap-[10px]">
+
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-youtube-play"></i>
+
+        </nav>
+
+    </footer>
+    
+</body>
+</html>
