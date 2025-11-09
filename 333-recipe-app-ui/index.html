@@ -1,168 +1,401 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chalenge 333 - Recipe App UI</title>
 
     <!-- W3Schools Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-        /* * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+      body {
+        height: 100vh;
+        width: 100vw;
+        background: #c9c9c9;
+        background: linear-gradient(
+          90deg,
+          rgba(201, 201, 201, 1) 40%,
+          rgba(245, 224, 32, 1) 60%
+        );
+      }
 
-        body {
-            height: 100vh;
-            width: 100vw;
-            background: #c9c9c9;
-            background: linear-gradient(90deg, rgba(201, 201, 201, 1) 40%, rgba(245, 224, 32, 1) 60%);
-        } */
+      .screens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        height: 100vh;
+      }
 
+      .screens .left,
+      .right {
+        position: relative;
+        background: #fff;
+        width: 300px;
+        padding: 0 20px;
+      }
 
+      .screens .left {
+        height: 900px;
+      }
+
+      .screens .left img.chilli {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        width: 300px;
+      }
+
+      .container-arrow {
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(191, 191, 191, 0.363);
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      h1,
+      h2 {
+        color: #626262;
+        font-size: 14px;
+        margin: 10px 0;
+      }
+
+      p {
+        color: #a9aec6;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .contact-likes {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .contact .perfil {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #878282;
+      }
+
+      .likes .container-heart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #feb906;
+      }
+
+      .likes i {
+        color: #ffdc82;
+        font-size: 13px;
+      }
+
+      .contact,
+      .likes {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .contact-likes span {
+        color: #626262;
+        font-weight: bold;
+        font-size: 13px;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      ul.ingredients li div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff9e3;
+      }
+
+      ul.ingredients li div i {
+        color: #fec225;
+        font-weight: bold;
+        font-size: 13px;
+      }
+
+      ul.ingredients li {
+        display: flex;
+        gap: 7px;
+        margin-bottom: 10px;
+      }
+
+      ul span {
+        font-size: 13px;
+        color: #858585;
+        font-weight: 600;
+      }
+
+      .step-container {
+        display: flex;
+        gap: 10px;
+      }
+
+      .steps p {
+        font-size: 13px;
+        color: #858585;
+        font-weight: 500;
+      }
+
+      .steps .container-number-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: min-content;
+        height: min-content;
+        margin-bottom: 0;
+        padding: 7px;
+        border-radius: 50%;
+        background: #6e6e6e;
+      }
+
+      .steps .number-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+
+      .step-description {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .step-description-img p {
+        color: #626262;
+        margin-bottom: 10px;
+      }
+
+      .step-description-img img {
+        width: 220px;
+        border-radius: 10px;
+      }
+
+      .steps img {
+        margin-bottom: 25px;
+      }
+
+      .container-divisor {
+        display: flex;
+        justify-content: center;
+      }
+
+      .divisor-small {
+        background: #838383;
+        width: 40px;
+        height: 4px;
+        border-radius: 10px;
+        margin: 10px;
+      }
+
+      .divisor-big {
+        background: #606060;
+        width: 110px;
+        height: 4px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+      }
+
+      .divisor-thin {
+        background: #a9aec6;
+        width: 260px;
+        height: 1px;
+      }
 
     </style>
-
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="screens">
-
-        <div class="right">
-
-            <div>
-                <i class="material-icons">keyboard_arrow_left</i>
-                <img src="./img/chilli.png" alt="Chilli Paneer">
-            </div>
-
-            <div class="text-section">
-
-                <div class="divisor-small"></div>
-
-                <h1>Chilli Paneer</h1>
-
-                <p>Food . 60 mins</p>
-
-                <div>
-
-                    <div class="contact">
-                        <img src="./img/" alt="perfil">
-                        <span>WebDev</span>
-                    </div>
-
-                    <div class="likes">
-                        <i class="fa fa-heart"></i>
-                        <div>273 Likes</div>
-                    </div>
-
-                </div>
-                
-                <hr>
-
-                <h2>Description</h2>
-
-                <p>Spicy Indian cottage cheese cubes in sweet, tangy sauce - Indo-Chinese comfort food!</p>
-
-                <hr>
-
-                <h2>Ingredients</h2>
-
-                <ul>
-                    <li> 
-                        <i class="material-icons">check</i> 
-                        <span>Paneer</span></li>
-                    <li>
-                        <i class="material-icons">check</i> 
-                        <span>Spicy Sauce</span>
-                    </li>
-                    <li>
-                        <i class="material-icons">check</i> 
-                        <span>Vegetable | Aromatics</span>
-                    </li>
-                </ul>
-
-                <div class="divisor-bigger"></div>
-
-            </div>
-
+      <div class="left">
+        <div class="container-arrow">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+        <div class="container-img">
+          <img class="chilli" src="./img/chilli.png" alt="Chilli Paneer" />
         </div>
 
-        <div class="left">
+        <div class="text-section">
+          <div class="container-divisor">
+            <div class="divisor-small"></div>
+          </div>
 
-            <div class="text-section">
+          <h1>Chilli Paneer</h1>
 
-                <div class="divisor-small"></div>
+          <p>Food . 60 mins</p>
 
-                <h1>Cacao Maca Walnut Milk</h1>
-
-                <p>Food . 60 mins</p>   
-                
-                <div>
-
-                    <div class="contact">
-                        <img src="./img/" alt="perfil">
-                        <span>WebDev</span>
-                    </div>
-
-                    <div class="likes">
-                        <i class="fa fa-heart"></i>
-                        <div>273 Likes</div>
-                    </div>
-
-                </div>
-                
-                <hr>
-
-                <h2>Description</h2>
-
-                <p>Spicy Indian cottage cheese cubes in sweet, tangy sauce - Indo-Chinese comfort food!</p>
-
-                <hr>
-
-                <h2>Ingredients</h2>
-
-                <ul>
-                    <li>
-                        <i class="material-icons">check</i> 
-                        <span>Paneer</span>
-                    </li>
-                    <li>
-                        <i class="material-icons">check</i> 
-                        <span>Spicy Sauce</span>
-                    </li>
-                    <li>
-                        <i class="material-icons">check</i> 
-                        <span>Vegetable | Aromatics</span>
-                    </li>
-                </ul>
-
-                <hr>
-
-                <h2>Steps</h2>
-
-                <div>
-
-                    <div>1</div>
-
-                    <p>Cut paneer into cubes, marinate with cornstarch and spices, then shallow-fry until golden and crispy.</p>
-
-                    <img src="./img/cacao.jpeg" alt="Cacao Maca Walnut Milk">
-
-                </div>
-
-                <div class="divisor-small"></div>
-
+          <div class="contact-likes">
+            <div class="contact">
+              <div class="perfil"></div>
+              <span>WebDev</span>
             </div>
 
+            <div class="likes">
+              <div class="container-heart">
+                <i class="fa fa-heart"></i>
+              </div>
+              <span>273 Likes</span>
+            </div>
+          </div>
+
+          <div class="divisor-thin"></div>
+
+          <h2>Description</h2>
+
+          <p>
+            Spicy Indian cottage cheese cubes in sweet, tangy sauce -
+            Indo-Chinese comfort food!
+          </p>
+
+          <div class="divisor-thin"></div>
+
+          <h2>Ingredients</h2>
+
+          <ul class="ingredients">
+            <li>
+              <div>
+                <i class="material-icons">check</i>
+              </div>
+              <span>Paneer</span>
+            </li>
+            <li>
+              <div>
+                <i class="material-icons">check</i>
+              </div>
+              <span>Spicy Sauce</span>
+            </li>
+            <li>
+              <div>
+                <i class="material-icons">check</i>
+              </div>
+              <span>Vegetable | Aromatics</span>
+            </li>
+          </ul>
+
+          <div class="divisor-bigger"></div>
         </div>
+      </div>
 
-    </div>    
+      <div class="right">
+        <div class="text-section">
+          <div class="container-divisor">
+            <div class="divisor-small"></div>
+          </div>
 
-</body>
+          <h1>Cacao Maca Walnut Milk</h1>
+
+          <p>Food . 60 mins</p>
+
+          <div class="contact-likes">
+            <div class="contact">
+              <div class="perfil"></div>
+              <span>Shanta Kumari</span>
+            </div>
+
+            <div class="likes">
+              <div class="container-heart">
+                <i class="fa fa-heart"></i>
+              </div>
+              <span>273 Likes</span>
+            </div>
+          </div>
+
+          <div class="divisor-thin"></div>
+
+          <h2>Description</h2>
+
+          <p>
+            Spicy Indian cottage cheese cubes in sweet, tangy sauce -
+            Indo-Chinese comfort food!
+          </p>
+
+          <div class="divisor-thin"></div>
+
+          <h2>Ingredients</h2>
+
+          <ul class="ingredients">
+            <li>
+              <div>
+                <i class="material-icons">check</i>
+              </div>
+              <span>Paneer</span>
+            </li>
+            <li>
+              <div>
+                <i class="material-icons">check</i>
+              </div>
+              <span>Spicy Sauce</span>
+            </li>
+            <li>
+              <div>
+                <i class="material-icons">check</i>
+              </div>
+              <span>Vegetable | Aromatics</span>
+            </li>
+          </ul>
+
+          <div class="divisor-thin"></div>
+
+          <div class="steps">
+            <h2>Steps</h2>
+
+            <div class="step-container">
+              <div class="container-number-1">
+                <span class="number-1">1</span>
+              </div>
+
+              <div class="step-description-img">
+                <p>
+                  Cut paneer into cubes, marinate with cornstarch and spices,
+                  then shallow-fry until golden and crispy.
+                </p>
+
+                <img src="./img/cacao.jpeg" alt="Cacao Maca Walnut Milk" />
+              </div>
+            </div>
+          </div>
+
+          <div class="container-divisor">
+            <div class="divisor-big"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
